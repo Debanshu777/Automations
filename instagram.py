@@ -13,10 +13,10 @@ class Instabot:
             'debanshu.datta')
         self.driver.find_element_by_xpath(
             '/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[3]/div/label/input').send_keys(
-            'BombayIndia')
+            'Abcd')
         self.driver.find_element_by_xpath(
             '/html/body/div[1]/section/main/article/div[2]/div[1]/div/form/div[4]').click()
-        time.sleep(3)
+        time.sleep(5)
         self.driver.find_element_by_xpath('/html/body/div[4]/div/div/div[3]/button[2]').click()
 
     def get_unfollowers(self):
@@ -24,7 +24,7 @@ class Instabot:
             '/html/body/div[1]/section/main/section/div[3]/div[1]/div/div[2]/div[1]/a').click()
         time.sleep(3)
         sugs = self.driver.find_element_by_xpath('/html/body/div[1]/section/main/div/header/section/ul/li[3]/a').click()
-        self.driver.execute_script('arguments[0].scrollIntoView();', sugs)
+        self.driver.execute_script('arguments[0].scrollIntoView(true);', sugs)
         time.sleep(2)
         scroll_view = self.driver.find_element_by_xpath('/html/body/div[4]/div/div[2]')
         last_ht, ht = 0, 1
